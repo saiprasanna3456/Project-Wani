@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid" th:fragment="ExitForm">
+    <div>
+        <div class="form-group">
+            <label for="SearchVisitor">Enter Details:</label>
+            <input id="SearchVisitor"  class="form-control" type="text" name="SearchVisitor" placeholder="Enter Name or Phone Number">
+        </div>
+        <div id="loadSuggestions" onclick="SubmitExit()" class="btn btn-primary">Load info</div>
+        <div id="clearSuggestions" onclick="ClearSuggestions()" class="btn btn-primary">Clear</div>
+    </div>
+    <br>
+    <div id="suggestionsTableContainer" class="container-fluid" >
+        <div id="TableContainer">
+                <table id="SuggestionForExitTable"></table>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

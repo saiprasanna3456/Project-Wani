@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      >
+<head>
+    <meta charset="UTF-8">
+    <title>Data Management</title>
+</head>
+<body>
+<div th:fragment="content">
+
+
+    <div class="col-12 col-sm-12">
+        <div class="card card-primary card-outline card-tabs">
+            <div class="card-header p-0 pt-1 border-bottom-0">
+                <ul class="nav nav-tabs  " id="pills-tab" role="tablist">
+                    <li class="nav-item" style="padding-left: 5px" >
+                        <button class="nav-link active" id="pills-entry-tab" data-bs-toggle="pill" data-bs-target="#Tab-Entry" type="button" role="tab" aria-controls="Tab-Entry" aria-selected="true">Submit Entry</button>
+                    </li>
+                    <li class="nav-item" style="padding-left: 1px" >
+                        <button class="nav-link" id="pills-exit-tab" data-bs-toggle="pill" data-bs-target="#Tab-Exit" type="button" role="tab" aria-controls="Tab-Exit" aria-selected="false">Submit Exit</button>
+                    </li>
+                    <li class="nav-item" style="padding-left: 1px">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Nothing For now</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="Tab-Entry" role="tabpanel" aria-labelledby="pills-entry-tab">
+                        <div th:replace="PartialPages/EntryForm :: EntryForm">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Tab-Exit" role="tabpanel" aria-labelledby="pills-exit-tab">
+                        <div th:replace="PartialPages/ExitForm :: ExitForm">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Keep waiting</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+</body>
+
+
+
+
+</html>
