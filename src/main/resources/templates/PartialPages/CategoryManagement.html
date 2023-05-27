@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid" th:fragment="addCategory">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="addNewCat">Category:</label>
+            <input type="text" class="form-control" id="addNewCat" placeholder="Enter Category" name="addNewCat">
+        </div>
+
+        <div id="submitNewCat"  class="btn btn-primary">Submit</div>
+
+    </div>
+</div>
+<div class="container-fluid" th:fragment="Modify">
+
+    <br>
+    <div id="CategoryTableContainer" class="container-fluid col-12" >
+        <div id="TableContainer" class="col-6">
+            <table style="width:100%" id="CategoryTable"></table>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="container-fluid" th:fragment="newPdoDetails">
+    <div class="form-group">
+        <div class="col-12" style="display:flex">
+            <div class="col-8">
+                <div class="col-12" style="display:flex">
+                    <div class="form-group col-6">
+                        <label for="fname">First Name:<span class="ast text-danger">*</span></label>
+                        <input type="text" class="form-control" id="fname" placeholder="Enter First name" name="fname">
+                        <span class="newPdoValidation" id="validfname" hidden>
+                            <span class="text-danger">Please enter First Name.</span>
+                        </span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="lname">Last Name:<span class="ast text-danger">*</span></label>
+                        <input type="text" class="form-control" id="lname" placeholder="Enter Last name (optional)" name="lname">
+                        <span class="newPdoValidation" id="validlname" hidden>
+                            <span class="text-danger">Please enter Last Name.</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group col-4">
+                <label for="email">Email:<span class="ast text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <span class="newPdoValidation" id="validmail" hidden>
+                    <span class="text-danger">Please enter valid e-mail.</span>
+                </span>
+            </div>
+        </div>
+        <div class="col-12" style="display:flex">
+            <div class="form-group col-6">
+                <label for="phone1">Contact:<span class="ast text-danger">*</span></label>
+                <input type="number" class="form-control" id="phone1" placeholder="Enter Contact" name="phone1">
+                <span class="newPdoValidation" id="validpcontact" hidden>
+                    <span class="text-danger">Please enter valid 10-digit contact number.</span>
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="phone2">Alternate Contact:</label>
+                <input type="number" class="form-control" id="phone2" placeholder="Enter Alternate Contact (optional)" name="phone2">
+                <span class="newPdoValidation" id="validscontact" hidden>
+                    <span class="text-danger">Please enter valid 10-digit contact number.</span>
+                </span>
+            </div>
+        </div>
+        <div class="col-12" style="display:flex">
+            <div class="form-group col-6">
+                <label for="addLine1">Address Line 1:<span class="ast text-danger">*</span></label>
+                <textarea class="form-control" id="addLine1" placeholder="Enter Building/Lane" name="addLine1"></textarea>
+                <span class="newPdoValidation" id="validaddress1" hidden>
+                    <span class="text-danger">Please enter valid Address (min 10 letters).</span>
+                </span>
+            </div>
+            <div class="form-group col-6">
+                <label for="addLine2">Address Line 2:</label>
+                <textarea class="form-control" id="addLine2" placeholder="Enter area" name="addLine2"></textarea>
+            </div>
+        </div>
+
+        <div class="col-12" style="display:flex">
+            <div class="col-6 ">
+                <div class="col-12" style="display:flex">
+                    <div class="form-group col-4">
+                        <label for="block">Taluk/Region:</label>
+                        <input type="text" class="form-control " disabled id="block" placeholder="Enter Taluk/Region" name="block"></input>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="distirct">Distirct:</label>
+                        <input type="text" class="form-control " disabled id="distirct" placeholder="Enter Distirct" name="distirct"></input>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="state">State:</label>
+                        <input type="text" class="form-control " disabled id="state" placeholder="Enter state" name="state"></input>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div class="col-12" style="display:flex">
+                    <div class="form-group col-6">
+                        <label for="area">Area:<span class="ast text-danger">*</span> </label>
+                        <div>
+                            <select id="area" name="area" disabled>
+                                <option value="-1">Please Enter Pincode</option>
+                            </select>
+                        </div>
+                        <span class="newPdoValidation" id="validarea" hidden>
+                            <span class="text-danger">Please select area.</span>
+                        </span>
+                        
+                       
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="pincode">Zip Code:<span class="ast text-danger">*</span></label>
+                        <input type="number" class="form-control" id="pincode" placeholder="Enter Zipcode" name="pincode" ></input>
+                        <span class="newPdoValidation" id="validpincode" hidden>
+                            <span class="text-danger">Please enter valid 6-digit Pincode.</span>
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="category">Category:<span class="ast text-danger">*</span></label>
+            <div>
+                <select id="category" name="category"></select>
+            </div>
+            
+            <span class="newPdoValidation" id="validcategory" hidden>
+                <span class="text-danger">Please select category.</span>
+            </span>
+            
+            
+        </div>
+
+    </div>
+   
+</div>
+<div class="container-fluid" th:fragment="newPdoMandatePlans">
+    <div>
+        <ul>
+            <li th:each="i : ${#numbers.sequence(1, 4)}">
+                <div class="container-fluid col-12">
+                    <div class="col-6 align-middle">
+                        <div class="col-12" th:id="'Plan-'+${i}" style="display:flex">
+                            <div class="col-3" th:id="'PlanNameDiv-'+${i}">
+                                <label th:for="'PlanName-'+${i}">Plan Name:</label>
+                                <input type="text" th:id="'PlanName-'+${i}" class="form-control" disabled>
+                            </div>
+                            <div class="col-2" th:id="'PlanValidityDiv-'+${i}">
+                                <label th:for="'PlanValidity-'+${i}">Plan Validity:</label>
+                                <input type="text" th:id="'PlanValidity-'+${i}" class="form-control" disabled>
+                            </div>
+                            <div class="col-2" th:id="'PlanAmountDiv-'+${i}">
+                                <label th:for="'PlanAmount-'+${i}">Plan Amount:<span class="ast text-danger">*</span></label>
+                                <input type="number" th:id="'PlanAmount-'+${i}" class="form-control" >
+                            </div>
+
+                            <div class="col-4">
+                                <div>
+                                    <label th:for="'PlanDataGb-'+${i}">Data in GB:</label>
+                                    <input type="number" th:id="'PlanDataGb-'+${i}" class="form-control" step=0.5>
+                                </div>
+                                <div>
+                                    <label th:for="'PlanDataMb-'+${i}">Data in MB:</label>
+                                    <input type="number" th:id="'PlanDataMb-'+${i}" class="form-control" >
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-5">
+
+                    </div>
+                    <div class="col-5">
+
+                    </div>
+                    <div class="col-5">
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+</body>
+</html>

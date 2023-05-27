@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-    <script src="/ManualFiles/js/mainPage.js"></script>
+    <script src="/ManualFiles/js/Common.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="/dist/js/adminlte.min.js"></script>
     <link rel="stylesheet" href="/ManualFiles/css/SweetAlert.css">
     <script src="/ManualFiles/js/SweetAlert.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <meta charset="UTF-8">
-    <title>Visitor Management</title>
+<!--    layout:title-pattern="$LAYOUT_TITLE"-->
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">PDOA Management Portal</title>
 </head>
 <body>
 <!-- Navbar -->
@@ -153,10 +157,10 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="VisitorData.html" class="brand-link">
+    <a href="../Pages/VisitorData.html" class="brand-link">
         <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">Visitor Management</span>
+        <span class="brand-text font-weight-light">PM-Wani Portal</span>
     </a>
 
     <!-- Sidebar -->
@@ -176,34 +180,24 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active menu-open">
+                
+                
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Entry Management
+                            Dashboard
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Entry and Exit</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Visitor Data</p>
-                            </a>
-                        </li>
-                    </ul>
+
                 </li>
+
                 <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link active">
+                    <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Reports
+                            PDO
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -211,17 +205,84 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Visitor Report</p>
+                                <p>View/Edit</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/addNewPdo" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>General Report</p>
+                                <p>Add New</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/CategoryManagement" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Category Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/PlanManagement" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Plan Management</p>
+                            </a>
+                        </li>
+                        
                     </ul>
+
                 </li>
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Device Management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                </li>
+
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Revenue Mangement
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                </li>
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            User Purchase History
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                </li>
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Distributor Management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                </li>
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Reports
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                </li>
+
+
 
             </ul>
         </nav>
@@ -251,12 +312,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <section id="mainContent">
-                <div th:replace="${table} :: ${fragment}">
-                    <p>Changing contents</p>
+            <section id="mainContent" layout:fragment="custom-content">
 
-
-                </div>
             </section>
 
 

@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{Layouts/_Layout.html}">
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Entry And Exit</title>
+    <script src="/ManualFiles/js/addPDO.js"></script>
+    <link rel="stylesheet" href="/ManualFiles/css/addPDO.css">
+</head>
+<body>
+<div layout:fragment="custom-content">
+
+
+    <div class="col-12 col-sm-12">
+        <div class="card card-primary card-outline card-tabs">
+<!--            <div class="card-header p-0 pt-1 border-bottom-0">-->
+<!--                <ul class="nav nav-tabs  " id="pills-tab" role="tablist">-->
+<!--                    <li class="nav-item" style="padding-left: 5px" >-->
+<!--                        <button class="nav-link active" id="pills-entry-tab" data-bs-toggle="pill" data-bs-target="#Tab-Entry" type="button" role="tab" aria-controls="Tab-Entry" aria-selected="true">Submit Entry</button>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item" style="padding-left: 1px" >-->
+<!--                        <button class="nav-link" id="pills-exit-tab" data-bs-toggle="pill" data-bs-target="#Tab-Exit" type="button" role="tab" aria-controls="Tab-Exit" aria-selected="false">Submit Exit</button>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item" style="padding-left: 1px">-->
+<!--                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Nothing For now</button>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+            <div>
+                <h1>Add New PDO</h1>
+                <div id="multi-step-form-container">
+                    <!-- Form Steps / Progress Bar -->
+                    <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                        <!-- Step 1 -->
+                        <li class="form-stepper-active text-center form-stepper-list" step="1">
+                            <a class="mx-2">
+                    <span class="form-stepper-circle">
+                        <span>1</span>
+                    </span>
+                                <div class="label">PDO Details</div>
+                            </a>
+                        </li>
+                        <!-- Step 2 -->
+                        <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                            <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>2</span>
+                    </span>
+                                <div class="label text-muted">Plan Details</div>
+                            </a>
+                        </li>
+                        <!-- Step 3 -->
+                        <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                            <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>3</span>
+                    </span>
+                                <div class="label text-muted">Plan Details</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Step Wise Form Content -->
+                    <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+                        <!-- Step 1 Content -->
+                        <section id="step-1" class="form-step" style="margin:5%">
+                            <h2 class="font-normal">PDO Details</h2>
+                            <!-- Step 1 input fields -->
+                            <div class="mt-3">
+                                <div class="card-body">
+                                    <div th:replace="PartialPages/AddNewPdoForm :: newPdoDetails">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button  id='Validate1' class="button" type="button" >Validate</button>
+                                <button  id='pdoDetailsNext' class="button btn-navigate-form-step" type="button" step_number="2" disabled hidden>Next</button>
+                            </div>
+                        </section>
+                        <!-- Step 2 Content, default hidden on page load. -->
+                        <section id="step-2" class="form-step d-none">
+                            <h2 class="font-normal">Plan Details</h2>
+                            <!-- Step 2 input fields -->
+                            <div class="mt-3">
+                                <div class="card-body">
+                                    <div th:replace="PartialPages/AddNewPdoForm :: newPdoMandatePlans">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                                <button  id='Validate2' class="button" type="button" >Validate</button>
+                                <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                            </div>
+                        </section>
+                        <!-- Step 3 Content, default hidden on page load. -->
+                        <section id="step-3" class="form-step d-none">
+                            <h2 class="font-normal">Device Details</h2>
+                            <!-- Step 3 input fields -->
+                            <div class="mt-3">
+                                Step 3 input fields goes here..
+                            </div>
+                            <div class="mt-3">
+                                <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>
+                                <button  id='Validate3' class="button" type="button" >Validate</button>
+                                <button class="button submit-btn" type="submit">Save</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+</body>
+
+
+
+
+</html>
+
+

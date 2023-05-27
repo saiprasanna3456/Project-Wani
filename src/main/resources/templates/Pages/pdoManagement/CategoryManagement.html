@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{Layouts/_Layout.html}">
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Category Management</title>
+    <script src="/ManualFiles/js/CategoryManagement.js"></script>
+    <link rel="stylesheet" href="/ManualFiles/css/categoryManagement.css">
+</head>
+<body>
+<div layout:fragment="custom-content">
+
+
+    <div class="col-12 col-sm-12">
+        <div class="card card-primary card-outline card-tabs">
+            <div class="card-header p-0 pt-1 border-bottom-0">
+                <ul class="nav nav-tabs  " id="pills-tab" role="tablist">
+                    <li class="nav-item" style="padding-left: 5px" >
+                        <button class="nav-link active" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#Tab-Add" type="button" role="tab" aria-controls="Tab-Add" aria-selected="true">Add</button>
+                    </li>
+                    <li class="nav-item" style="padding-left: 1px" >
+                        <button class="nav-link" id="pills-modify-tab" data-bs-toggle="pill" data-bs-target="#Tab-Modify" type="button" role="tab" aria-controls="Tab-Modify" aria-selected="false">Modify</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="Tab-Add" role="tabpanel" aria-labelledby="pills-add-tab">
+                        <div th:replace="PartialPages/CategoryManagement :: addCategory">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Tab-Modify" role="tabpanel" aria-labelledby="pills-modify-tab">
+                        <div th:replace="PartialPages/CategoryManagement :: Modify">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Keep waiting</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+</body>
+
+
+
+
+</html>
