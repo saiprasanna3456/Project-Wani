@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid" th:fragment="AddPlan">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="PlanName">Plan Name:<span class="ast text-danger">*</span></label>
+            <input type="text" class="form-control" id="PlanName" placeholder="Enter Plan Name" name="PlanName">
+        </div>
+        <div class="form-group">
+            <label for="PlanValidity">Validity:<span class="ast text-danger">*</span></label>
+            <input type="text" class="form-control" id="PlanValidity" placeholder="Enter Validity" name="PlanValidity">
+        </div>
+        <div class="form-group">
+            <label for="PlanAmount">Amount:<span class="ast text-danger">*</span></label>
+            <input type="text" class="form-control" id="PlanAmount" placeholder="Enter Amount" name="PlanAmount">
+        </div>
+        <div class="form-group">
+            <label for="PlanDataLimit">Data Volume:<span class="ast text-danger">*</span></label>
+            <input type="number" class="form-control" id="PlanDataLimit" placeholder="Enter Data Limit " name="PlanDataLimit">
+        </div>
+        <div class="form-group">
+            <label for="PlanSpeed">Plan Speed:<span class="ast text-danger">*</span></label>
+            <input type="text" class="form-control" id="PlanSpeed" placeholder="Enter Plan Speed " name="PlanSpeed">
+        </div>
+        <div class="form-group">
+            <label for="PlanDesc">Plan Description:</label>
+            <textarea type="text" class="form-control" id="PlanDesc" placeholder="Enter Plan Description (Optional) " name="PlanDesc"></textarea>
+        </div>
+
+        <div id="submitNewPlan"  class="btn btn-primary">Submit</div>
+
+    </div>
+</div>
+<div class="container-fluid" th:fragment="ModifyPlan">
+
+    <br>
+    <div id="PlanTableContainerKaBaap" class="container-fluid col-12" >
+        <div id="PlanTableContainer" class="col-6">
+            <table style="width:100%" id="PlanTable"></table>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
