@@ -1,31 +1,18 @@
-package com.example.visitorproject.DataAccessLayer;
+package com.example.pmwani.DataAccessLayer;
 
-import com.example.visitorproject.Entities.PdoManagement.PdoCategories;
-import com.example.visitorproject.Entities.PdoManagement.PdoDetails;
-import com.example.visitorproject.Entities.PdoManagement.PdoPlanNames;
-import com.example.visitorproject.Repository.PdoManagementRepository;
+import com.example.pmwani.Entities.PdoManagement.PdoCategories;
+import com.example.pmwani.Entities.PdoManagement.PdoDetails;
+import com.example.pmwani.Entities.PdoManagement.PdoPlanNames;
+import com.example.pmwani.Repository.PdoManagementRepository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.ParameterMode;
 import jakarta.persistence.StoredProcedureQuery;
 
-import org.hibernate.grammars.hql.HqlParser.EntityIdExpressionContext;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.FluentQuery;
-import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.*;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
 @Service
 @Component

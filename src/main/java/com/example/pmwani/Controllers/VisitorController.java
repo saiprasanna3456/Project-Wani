@@ -1,13 +1,9 @@
-package com.example.visitorproject.Controllers;
+package com.example.pmwani.Controllers;
 
 
 
 
 import org.springframework.stereotype.Controller;
-
-
-
-import java.util.List;
 
 @Controller
 public class VisitorController {

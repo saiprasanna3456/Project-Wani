@@ -1,13 +1,13 @@
-package com.example.visitorproject;
+package com.example.pmwani;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VisitorProjectApplication {
+public class PmWaniProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VisitorProjectApplication.class, args);
+		SpringApplication.run(PmWaniProjectApplication.class, args);
 	}
 
 }

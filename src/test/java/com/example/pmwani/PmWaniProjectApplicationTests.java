@@ -1,10 +1,10 @@
-package com.example.visitorproject;
+package com.example.pmwani;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VisitorProjectApplicationTests {
+class PmWaniProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

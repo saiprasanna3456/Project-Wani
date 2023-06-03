@@ -1,17 +1,16 @@
-package com.example.visitorproject.Controllers;
+package com.example.pmwani.Controllers;
 
 
-import com.example.visitorproject.DataAccessLayer.PdoDal;
+import com.example.pmwani.DataAccessLayer.PdoDal;
 
 
-import com.example.visitorproject.Entities.PdoManagement.PdoCategories;
-import com.example.visitorproject.Entities.PdoManagement.PdoDetails;
-import com.example.visitorproject.Entities.PdoManagement.PdoPlanNames;
-import com.example.visitorproject.Repository.PdoManagementRepository;
+import com.example.pmwani.Entities.PdoManagement.PdoCategories;
+import com.example.pmwani.Entities.PdoManagement.PdoDetails;
+import com.example.pmwani.Entities.PdoManagement.PdoPlanNames;
+import com.example.pmwani.Repository.PdoManagementRepository;
 
 import jakarta.persistence.EntityManager;
 import org.json.JSONObject;
-import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
