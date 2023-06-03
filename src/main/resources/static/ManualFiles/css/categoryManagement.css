@@ -1,0 +1,9 @@
+.icon-rename-delete{
+    padding: 0px 10px 0px 10px;
+    
+}
+.icon-rename-delete:hover{
+    cursor:pointer;
+    transform: scale(1.2);
+    
+}
